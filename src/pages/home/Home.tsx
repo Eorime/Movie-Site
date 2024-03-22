@@ -20,14 +20,14 @@ const Home: React.FC = () => {
     const fetchMovies = async () => {
       try {
         const response = await fetchData(
-          "https://imdb-top-100-movies.p.rapidapi.com/top100",
+          "https://imdb-top-100-movies.p.rapidapi.com/",
           apiKey,
           apiHost
         );
         setMovieData(response);
         console.log(response);
-      } catch (error: any) {
-        setError(error.message);
+      } catch (error) {
+        setError((error as Error).message);
       } finally {
         setIsLoading(false);
       }
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
         <div>Loading...</div>
       ) : error ? (
         <div>Error: {error}</div>
-      ) : (
+      ) : Array.isArray(movieData) && movieData.length > 0 ? (
         movieData.map((movie: Movie, index: number) => (
           <div key={index}>
             <h2>{movie.title}</h2>
@@ -51,6 +51,8 @@ const Home: React.FC = () => {
             <p>Rating: {movie.rating}</p>
           </div>
         ))
+      ) : (
+        <div>No movies found.</div>
       )}
     </HomeContainer>
   );

@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { HomeContainer } from "./style";
+import {
+  Error,
+  FinalError,
+  HomeContainer,
+  Paragraph,
+  Spinner,
+  Thumbnail,
+} from "./style";
 import { fetchData } from "../../api";
 
 interface Movie {
   rank: number;
   title: string;
-  thumbnail: string;
+  big_image: string;
   rating: string;
 }
 
@@ -39,20 +46,20 @@ const Home: React.FC = () => {
   return (
     <HomeContainer>
       {isLoading ? (
-        <div>Loading...</div>
+        <Spinner>Loading...</Spinner>
       ) : error ? (
-        <div>Error: {error}</div>
+        <Error>Error: {error}</Error>
       ) : Array.isArray(movieData) && movieData.length > 0 ? (
         movieData.map((movie: Movie, index: number) => (
           <div key={index}>
             <h2>{movie.title}</h2>
-            <img src={movie.thumbnail} alt={movie.title} />
-            <p>Rank: {movie.rank}</p>
-            <p>Rating: {movie.rating}</p>
+            <Thumbnail src={movie.big_image} alt={movie.title} />
+            <Paragraph>Rank: {movie.rank}</Paragraph>
+            <Paragraph>Rating: {movie.rating}</Paragraph>
           </div>
         ))
       ) : (
-        <div>No movies found.</div>
+        <FinalError>No movies found.</FinalError>
       )}
     </HomeContainer>
   );

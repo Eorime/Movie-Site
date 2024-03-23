@@ -13,5 +13,3 @@ export const Paragraph = styled.p``;
 export const Thumbnail = styled.img`
   width: 100px;
 `;
-
-export {};

@@ -1,5 +1,6 @@
 const home = "/";
 const watchlist = "/watchlist";
-const personalPage = "/personalPage";
+const movies = "/movies";
+const movieDetails = "/movies/:movieDetails";
 
-export const routes = { home, watchlist, personalPage };
+export const routes = { home, watchlist, movies, movieDetails };

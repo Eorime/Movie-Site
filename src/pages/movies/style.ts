@@ -11,5 +11,5 @@ export const FinalError = styled.div``;
 export const Paragraph = styled.p``;
 
 export const Thumbnail = styled.img`
-  width: 100px;
+  width: 200px;
 `;

@@ -8,6 +8,7 @@ import {
   Thumbnail,
 } from "./style";
 import { fetchData } from "../../api";
+import { BarLoader } from "react-spinners";
 
 interface Movie {
   rank: number;
@@ -46,7 +47,9 @@ const Movies: React.FC = () => {
   return (
     <MoviesContainer>
       {isLoading ? (
-        <Spinner>Loading...</Spinner>
+        <Spinner>
+          <BarLoader />
+        </Spinner>
       ) : error ? (
         <Error>Error: {error}</Error>
       ) : Array.isArray(movieData) && movieData.length > 0 ? (

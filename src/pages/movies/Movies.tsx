@@ -9,6 +9,7 @@ import {
 } from "./style";
 import { fetchData } from "../../api";
 import { BarLoader } from "react-spinners";
+import { useNavigate, useParams } from "react-router-dom";
 
 interface Movie {
   rank: number;
@@ -23,6 +24,7 @@ const Movies: React.FC = () => {
   const apiHost = "imdb-top-100-movies.p.rapidapi.com";
   const [error, setError] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchMovies = async () => {

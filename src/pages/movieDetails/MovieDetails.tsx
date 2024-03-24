@@ -16,7 +16,7 @@ const MovieDetails: React.FC = () => {
     const fetchMovie = async () => {
       try {
         const response = await fetchDataDetails(
-          `https://imdb-top-100-movies.p.rapidapi.com/top${movieID}`,
+          `https://imdb-top-100-movies.p.rapidapi.com/${movieID}`,
           apiKey,
           apiHost
         );

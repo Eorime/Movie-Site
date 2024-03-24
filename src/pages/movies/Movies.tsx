@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import {
   Error,
   FinalError,
+  MovieContainer,
   MoviesContainer,
   Paragraph,
   Spinner,
   Thumbnail,
+  Title,
 } from "./style";
 import { fetchData } from "../../api";
 import { BarLoader } from "react-spinners";
@@ -56,16 +58,17 @@ const Movies: React.FC = () => {
         <Error>Error: {error}</Error>
       ) : Array.isArray(movieData) && movieData.length > 0 ? (
         movieData.map((movie: Movie, index: number) => (
-          <div key={index}>
-            <h2>{movie.title}</h2>
+          <MovieContainer key={index}>
+            <Title>{movie.title}</Title>
             <Thumbnail src={movie.big_image} alt={movie.title} />
             <Paragraph>Rank: {movie.rank}</Paragraph>
             <Paragraph>Rating: {movie.rating}</Paragraph>
-          </div>
+          </MovieContainer>
         ))
       ) : (
         <FinalError>No movies found.</FinalError>
       )}
+      <button>details</button>
     </MoviesContainer>
   );
 };

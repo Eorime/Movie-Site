@@ -12,6 +12,7 @@ import {
 import { fetchData } from "../../api";
 import { BarLoader } from "react-spinners";
 import { useNavigate, useParams } from "react-router-dom";
+import { routes } from "../../constants/routes";
 
 interface Movie {
   rank: number;
@@ -63,12 +64,12 @@ const Movies: React.FC = () => {
             <Thumbnail src={movie.big_image} alt={movie.title} />
             <Paragraph>Rank: {movie.rank}</Paragraph>
             <Paragraph>Rating: {movie.rating}</Paragraph>
+            <button onClick={() => navigate(`top${movie.rank}`)}>More</button>
           </MovieContainer>
         ))
       ) : (
         <FinalError>No movies found.</FinalError>
       )}
-      <button>details</button>
     </MoviesContainer>
   );
 };

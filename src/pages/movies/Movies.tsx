@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
+  DetailsButton,
   Error,
   FinalError,
   MovieContainer,
@@ -64,7 +65,9 @@ const Movies: React.FC = () => {
             <Thumbnail src={movie.big_image} alt={movie.title} />
             <Paragraph>Rank: {movie.rank}</Paragraph>
             <Paragraph>Rating: {movie.rating}</Paragraph>
-            <button onClick={() => navigate(`top${movie.rank}`)}>More</button>
+            <DetailsButton onClick={() => navigate(`top${movie.rank}`)}>
+              More
+            </DetailsButton>
           </MovieContainer>
         ))
       ) : (

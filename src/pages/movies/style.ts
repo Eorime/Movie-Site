@@ -17,3 +17,5 @@ export const Title = styled.h2``;
 export const Thumbnail = styled.img`
   width: 200px;
 `;
+
+export const DetailsButton = styled.button``

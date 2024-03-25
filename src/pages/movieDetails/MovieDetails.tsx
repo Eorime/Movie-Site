@@ -3,6 +3,7 @@ import { BackButton, MovieContainer, PosterImage, Spinner } from "./style";
 import { BarLoader } from "react-spinners";
 import { fetchDataDetails } from "../../api";
 import { useNavigate, useParams } from "react-router-dom";
+import Navbar from "../../components/navbar/Navbar";
 
 const MovieDetails: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -36,6 +37,7 @@ const MovieDetails: React.FC = () => {
 
   return (
     <MovieContainer>
+      <Navbar />
       {isLoading && (
         <Spinner>
           <BarLoader />

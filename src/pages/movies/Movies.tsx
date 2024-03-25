@@ -14,6 +14,7 @@ import { fetchData } from "../../api";
 import { BarLoader } from "react-spinners";
 import { useNavigate, useParams } from "react-router-dom";
 import { routes } from "../../constants/routes";
+import Navbar from "../../components/navbar/Navbar";
 
 interface Movie {
   rank: number;
@@ -52,6 +53,7 @@ const Movies: React.FC = () => {
 
   return (
     <MoviesContainer>
+      <Navbar />
       {isLoading ? (
         <Spinner>
           <BarLoader />

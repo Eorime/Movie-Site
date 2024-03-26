@@ -7,8 +7,8 @@ const Navbar = () => {
   return (
     <NavbarContainer>
       <StyledLink to={routes.home}>Home</StyledLink>
-      <StyledLink to={routes.watchlist}>Watchlist</StyledLink>
       <StyledLink to={routes.movies}>Movies</StyledLink>
+      <StyledLink to={routes.watchlist}>Watchlist</StyledLink>
       <SignInNav />
     </NavbarContainer>
   );

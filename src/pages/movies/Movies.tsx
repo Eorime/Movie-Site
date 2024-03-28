@@ -15,6 +15,7 @@ import { BarLoader } from "react-spinners";
 import { useNavigate, useParams } from "react-router-dom";
 import { routes } from "../../constants/routes";
 import Navbar from "../../components/navbar/Navbar";
+import Pagination from "../../components/pagination/Pagination";
 
 interface Movie {
   rank: number;
@@ -25,6 +26,8 @@ interface Movie {
 
 const Movies: React.FC = () => {
   const [movieData, setMovieData] = useState<Movie[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(2);
+  const [moviesPerPage, setMoviesPerPage] = useState<number>(10);
   const apiKey = "844b22c324msh1e3b8a407db1434p1264f4jsnb943ac8c12f9";
   const apiHost = "imdb-top-100-movies.p.rapidapi.com";
   const [error, setError] = useState<string>("");
@@ -51,6 +54,10 @@ const Movies: React.FC = () => {
     fetchMovies();
   }, []);
 
+  const lastMovieIndex = currentPage * moviesPerPage;
+  const firstMovieIndex = lastMovieIndex - moviesPerPage;
+  const currentMovies = movieData.slice(firstMovieIndex, lastMovieIndex);
+
   return (
     <MoviesContainer>
       <Navbar />
@@ -60,8 +67,8 @@ const Movies: React.FC = () => {
         </Spinner>
       ) : error ? (
         <Error>Error: {error}</Error>
-      ) : Array.isArray(movieData) && movieData.length > 0 ? (
-        movieData.map((movie: Movie, index: number) => (
+      ) : Array.isArray(currentMovies) && currentMovies.length > 0 ? (
+        currentMovies.map((movie: Movie, index: number) => (
           <MovieContainer key={index}>
             <Title>{movie.title}</Title>
             <Thumbnail src={movie.big_image} alt={movie.title} />
@@ -75,6 +82,12 @@ const Movies: React.FC = () => {
       ) : (
         <FinalError>No movies found.</FinalError>
       )}
+      <Pagination
+        allMovies={movieData.length}
+        moviesPerPage={moviesPerPage}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />{" "}
     </MoviesContainer>
   );
 };

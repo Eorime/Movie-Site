@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  PaginationContainer,
+  PaginationList,
+  PaginationListElements,
+  StyledLink,
+} from "./style";
 
 interface PaginationProps {
   allMovies: number;
@@ -20,25 +26,27 @@ const Pagination: React.FC<PaginationProps> = ({
   }
 
   return (
-    <ul className="pagination">
-      {pageNumbers.map((number) => (
-        <li
-          key={number}
-          className={`page-item ${currentPage === number ? "active" : ""}`}
-        >
-          <a
-            href="#"
-            className="page-link"
-            onClick={(e) => {
-              e.preventDefault();
-              setCurrentPage(number);
-            }}
+    <PaginationContainer>
+      <PaginationList className="pagination">
+        {pageNumbers.map((number) => (
+          <PaginationListElements
+            key={number}
+            className={`page-item ${currentPage === number ? "active" : ""}`}
           >
-            {number}
-          </a>
-        </li>
-      ))}
-    </ul>
+            <StyledLink
+              to="#"
+              className="page-link"
+              onClick={(e) => {
+                e.preventDefault();
+                setCurrentPage(number);
+              }}
+            >
+              {number}
+            </StyledLink>
+          </PaginationListElements>
+        ))}
+      </PaginationList>
+    </PaginationContainer>
   );
 };
 

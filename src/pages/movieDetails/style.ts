@@ -9,3 +9,5 @@ export const BackButton = styled.div``;
 export const PosterImage = styled.img`
   width: 250px;
 `;
+
+export const AddToWatchlist = styled.button``;

@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { BackButton, MovieContainer, PosterImage, Spinner } from "./style";
+import {
+  AddToWatchlist,
+  BackButton,
+  MovieContainer,
+  PosterImage,
+  Spinner,
+} from "./style";
 import { BarLoader } from "react-spinners";
 import { fetchDataDetails } from "../../api";
 import { useNavigate, useParams } from "react-router-dom";
@@ -57,6 +63,7 @@ const MovieDetails: React.FC = () => {
       >
         Back
       </BackButton>
+      <AddToWatchlist>Add</AddToWatchlist>
     </MovieContainer>
   );
 };

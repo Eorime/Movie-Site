@@ -11,7 +11,7 @@ export const PaginationList = styled.ul`
 
 export const PaginationListElements = styled.li`
   display: inline-block;
-  margin: 10px;
+  padding: 15px;
 `;
 
 export const StyledLink = styled(Link)`

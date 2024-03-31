@@ -12,11 +12,13 @@ interface Movie {
 interface WatchlistContextType {
   watchlist: Movie[];
   addToWatchlist: (movie: Movie) => void;
+  removeFromWatchlist: (rank: number) => void;
 }
 
 const WatchlistContext = createContext<WatchlistContextType>({
   watchlist: [],
   addToWatchlist: () => {},
+  removeFromWatchlist: (rank: number) => {},
 });
 
 export const useWatchlist = () => useContext(WatchlistContext);
@@ -36,8 +38,14 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   };
 
+  const removeFromWatchlist = (rank: number) => {
+    setWatchlist((prev) => prev.filter((movie) => movie.rank !== rank));
+  };
+
   return (
-    <WatchlistContext.Provider value={{ watchlist, addToWatchlist }}>
+    <WatchlistContext.Provider
+      value={{ watchlist, addToWatchlist, removeFromWatchlist }}
+    >
       {children}
     </WatchlistContext.Provider>
   );

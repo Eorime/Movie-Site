@@ -10,6 +10,7 @@ import { BarLoader } from "react-spinners";
 import { fetchDataDetails } from "../../api";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
+import { useWatchlist } from "../../context/WatchlistContextProvider";
 
 const MovieDetails: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -19,6 +20,7 @@ const MovieDetails: React.FC = () => {
   const apiHost = "imdb-top-100-movies.p.rapidapi.com";
   const { movieID } = useParams<{ movieID: string }>();
   const navigate = useNavigate();
+  const { addToWatchlist } = useWatchlist();
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -38,6 +40,10 @@ const MovieDetails: React.FC = () => {
 
     fetchMovie();
   }, [movieID]);
+
+  const handleAddToWatchlist = () => {
+    addToWatchlist(movieDetails);
+  };
 
   console.log(movieDetails);
 
@@ -63,7 +69,9 @@ const MovieDetails: React.FC = () => {
       >
         Back
       </BackButton>
-      <AddToWatchlist>Add</AddToWatchlist>
+      <AddToWatchlist onClick={handleAddToWatchlist}>
+        Add to Watchlist
+      </AddToWatchlist>
     </MovieContainer>
   );
 };

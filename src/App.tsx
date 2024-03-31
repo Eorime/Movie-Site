@@ -1,11 +1,14 @@
 import React from "react";
 import AppRoutes from "./AppRoutes";
 import { AppContextProvider } from "./context/AppContextProvider";
+import { WatchlistProvider } from "./context/WatchlistContextProvider";
 
 const App = () => {
   return (
     <AppContextProvider>
-      <AppRoutes />
+      <WatchlistProvider>
+        <AppRoutes />
+      </WatchlistProvider>
     </AppContextProvider>
   );
 };

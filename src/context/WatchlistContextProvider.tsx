@@ -27,7 +27,13 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
   const [watchlist, setWatchlist] = useState<Movie[]>([]);
 
   const addToWatchlist = (movie: Movie) => {
-    setWatchlist((prev) => [...prev, movie]);
+    const isAlreadyAdded = watchlist.some((m) => m.rank === movie.rank);
+
+    if (!isAlreadyAdded) {
+      setWatchlist((prev) => [...prev, movie]);
+    } else {
+      console.log("already there");
+    }
   };
 
   return (

@@ -14,7 +14,8 @@ export const PaginationListElements = styled.li`
   padding: 15px;
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)<{ isActive: boolean }>`
   text-decoration: none;
-  color: black;
+  color: ${(props) => (props.isActive ? "black" : "gray")};
+  font-weight: ${(props) => (props.isActive ? "bold" : "normal")};
 `;

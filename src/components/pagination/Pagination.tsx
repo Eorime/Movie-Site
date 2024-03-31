@@ -35,7 +35,8 @@ const Pagination: React.FC<PaginationProps> = ({
           >
             <StyledLink
               to="#"
-              className="page-link"
+              className={`page-link`}
+              isActive={currentPage === number}
               onClick={(e) => {
                 e.preventDefault();
                 setCurrentPage(number);

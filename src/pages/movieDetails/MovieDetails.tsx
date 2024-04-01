@@ -3,6 +3,7 @@ import {
   AddToWatchlist,
   BackButton,
   MovieContainer,
+  Paragraph,
   PosterImage,
   Spinner,
 } from "./style";
@@ -59,9 +60,10 @@ const MovieDetails: React.FC = () => {
         src={movieDetails.big_image}
         alt={`${movieDetails.title} poster`}
       />
-      <p>{movieDetails.title}</p>
-      <p>{movieDetails.description}</p>
-      <p>{movieDetails.director}</p>
+      <Paragraph>{movieDetails.title}</Paragraph>
+      <Paragraph>{movieDetails.description}</Paragraph>
+      <Paragraph>{`Director: ${movieDetails.director}`}</Paragraph>
+      <Paragraph>{`Genre: ${movieDetails.genre}`}</Paragraph>
       <BackButton
         onClick={() => {
           navigate(-1);

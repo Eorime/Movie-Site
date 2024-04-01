@@ -1,7 +1,8 @@
 import React from "react";
+import { SignInContainer } from "./style";
 
 const SignInNav = () => {
-  return <div>SignInNav</div>;
+  return <SignInContainer>SignInNav</SignInContainer>;
 };
 
 export default SignInNav;

@@ -11,3 +11,5 @@ export const PosterImage = styled.img`
 `;
 
 export const AddToWatchlist = styled.button``;
+
+export const Paragraph = styled.p``;

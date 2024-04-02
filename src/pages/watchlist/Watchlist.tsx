@@ -1,6 +1,11 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
-import { RemoveButton, WatchlistContainer } from "./styles";
+import {
+  RemoveButton,
+  WatchlistContainer,
+  WatchlistMovie,
+  WatchlistMovieImage,
+} from "./styles";
 import { useWatchlist } from "../../context/WatchlistContextProvider";
 
 const Watchlist: React.FC = () => {
@@ -12,17 +17,14 @@ const Watchlist: React.FC = () => {
   return (
     <WatchlistContainer>
       <Navbar />
-      <ul>
-        {watchlist.map((movie) => (
-          <li key={movie.rank}>
-            {movie.title}
-            <RemoveButton onClick={() => handleRemoveFromWatchlist(movie.rank)}>
-              Remove
-            </RemoveButton>
-          </li>
-        ))}
-      </ul>
-      Watchlist
+      {watchlist.map((movie) => (
+        <WatchlistMovie key={movie.rank}>
+          {movie.title} <WatchlistMovieImage src={movie.big_image} />
+          <RemoveButton onClick={() => handleRemoveFromWatchlist(movie.rank)}>
+            Remove
+          </RemoveButton>
+        </WatchlistMovie>
+      ))}
     </WatchlistContainer>
   );
 };

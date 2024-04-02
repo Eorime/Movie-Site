@@ -66,17 +66,7 @@ const MovieDetails: React.FC = () => {
       <Paragraph>{movieDetails.description}</Paragraph>
       <Paragraph>{`Director: ${movieDetails.director}`}</Paragraph>
       <Paragraph>{`Genre: ${movieDetails.genre}`}</Paragraph>
-      <StyledLink to={movieDetails.trailer} target="_blank">
-        <TrailerThumbnail>
-          <iframe
-            width="560"
-            height="315"
-            src={movieDetails.trailer_embed_link}
-            title="Trailer"
-            allowFullScreen
-          ></iframe>
-        </TrailerThumbnail>
-      </StyledLink>
+      <StyledLink to={movieDetails.trailer} target="_blank"></StyledLink>
       <BackButton
         onClick={() => {
           navigate(-1);
@@ -87,6 +77,15 @@ const MovieDetails: React.FC = () => {
       <AddToWatchlist onClick={handleAddToWatchlist}>
         Add to Watchlist
       </AddToWatchlist>
+      <TrailerThumbnail>
+        <iframe
+          width="560"
+          height="315"
+          src={movieDetails.trailer_embed_link}
+          title="Trailer"
+          allowFullScreen
+        ></iframe>
+      </TrailerThumbnail>
     </MovieContainer>
   );
 };

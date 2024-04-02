@@ -6,12 +6,14 @@ import {
   Paragraph,
   PosterImage,
   Spinner,
+  TrailerThumbnail,
 } from "./style";
 import { BarLoader } from "react-spinners";
 import { fetchDataDetails } from "../../api";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
 import { useWatchlist } from "../../context/WatchlistContextProvider";
+import { StyledLink } from "../../components/navbar/style";
 
 const MovieDetails: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -64,6 +66,17 @@ const MovieDetails: React.FC = () => {
       <Paragraph>{movieDetails.description}</Paragraph>
       <Paragraph>{`Director: ${movieDetails.director}`}</Paragraph>
       <Paragraph>{`Genre: ${movieDetails.genre}`}</Paragraph>
+      <StyledLink to={movieDetails.trailer} target="_blank">
+        <TrailerThumbnail>
+          <iframe
+            width="560"
+            height="315"
+            src={movieDetails.trailer_embed_link}
+            title="Trailer"
+            allowFullScreen
+          ></iframe>
+        </TrailerThumbnail>
+      </StyledLink>
       <BackButton
         onClick={() => {
           navigate(-1);

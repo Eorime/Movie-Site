@@ -22,7 +22,6 @@ interface Movie {
   title: string;
   big_image: string;
   rating: string;
-  genre: string;
 }
 
 const Movies: React.FC = () => {

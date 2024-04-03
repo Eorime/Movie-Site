@@ -9,7 +9,7 @@ import {
   TrailerThumbnail,
 } from "./style";
 import { BarLoader } from "react-spinners";
-import { fetchData, fetchDataDetails } from "../../api";
+import { fetchDataDetails } from "../../api";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
 import { useWatchlist } from "../../context/WatchlistContextProvider";

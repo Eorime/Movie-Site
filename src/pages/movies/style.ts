@@ -18,4 +18,15 @@ export const Thumbnail = styled.img`
   width: 200px;
 `;
 
-export const DetailsButton = styled.button``
+export const DetailsButton = styled.button`
+  background-color: #1f9156;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #609f7e;
+  }
+`;

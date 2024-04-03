@@ -13,7 +13,6 @@ import {
 import { fetchData } from "../../api";
 import { BarLoader } from "react-spinners";
 import { useNavigate, useParams } from "react-router-dom";
-import { routes } from "../../constants/routes";
 import Navbar from "../../components/navbar/Navbar";
 import Pagination from "../../components/pagination/Pagination";
 

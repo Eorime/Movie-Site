@@ -8,9 +8,12 @@ const Navbar = () => {
     <NavbarContainer>
       <StyledLink to={routes.home}>Home</StyledLink>
       <StyledLink to={routes.movies}>Movies</StyledLink>
-      <StyledLink to={routes.watchlist}>Watchlist</StyledLink>
       <StyledLink to={routes.series}>Series</StyledLink>
-      <SignInNav />
+      <StyledLink to={routes.watchlist}>Watchlist</StyledLink>
+      <StyledLink>
+        {" "}
+        <SignInNav />
+      </StyledLink>
     </NavbarContainer>
   );
 };

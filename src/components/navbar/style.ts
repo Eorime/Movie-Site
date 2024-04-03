@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 
 export const NavbarContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
   color: inherit;
+  margin: 20px;
 `;

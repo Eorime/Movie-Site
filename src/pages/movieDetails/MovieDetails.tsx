@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import {
   AddToWatchlist,
   BackButton,
+  DetailsContaier,
   MovieContainer,
   Paragraph,
   PosterImage,
   Spinner,
+  Title,
   TrailerThumbnail,
 } from "./style";
 import { BarLoader } from "react-spinners";
@@ -62,11 +64,13 @@ const MovieDetails: React.FC = () => {
         src={movieDetails.big_image}
         alt={`${movieDetails.title} poster`}
       />
-      <Paragraph>{movieDetails.title}</Paragraph>
-      <Paragraph>{movieDetails.description}</Paragraph>
-      <Paragraph>{`Director: ${movieDetails.director}`}</Paragraph>
-      <Paragraph>{`Genre: ${movieDetails.genre}`}</Paragraph>
-      <StyledLink to={movieDetails.trailer} target="_blank"></StyledLink>
+      <DetailsContaier>
+        <Title>{movieDetails.title}</Title>
+        <Paragraph>{movieDetails.description}</Paragraph>
+        <Paragraph>{`Director: ${movieDetails.director}`}</Paragraph>
+        <Paragraph>{`Genre: ${movieDetails.genre}`}</Paragraph>
+        <StyledLink to={movieDetails.trailer} target="_blank"></StyledLink>
+      </DetailsContaier>
       <BackButton
         onClick={() => {
           navigate(-1);

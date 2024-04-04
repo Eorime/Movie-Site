@@ -7,6 +7,7 @@ import {
   PosterImage,
   Spinner,
   TrailerThumbnail,
+  Title,
 } from "./style";
 import { BarLoader } from "react-spinners";
 import { fetchDataDetails } from "../../api";
@@ -62,7 +63,7 @@ const SeriesDetails: React.FC = () => {
         src={serieDetails.big_image}
         alt={`${serieDetails.title} poster`}
       />
-      <Paragraph>{serieDetails.title}</Paragraph>
+      <Title>{serieDetails.title}</Title>
       <Paragraph>{serieDetails.description}</Paragraph>
       <Paragraph>{`Director: ${serieDetails.director}`}</Paragraph>
       <Paragraph>{`Genre: ${serieDetails.genre}`}</Paragraph>

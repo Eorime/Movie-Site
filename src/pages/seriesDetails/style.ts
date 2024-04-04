@@ -15,11 +15,14 @@ export const Title = styled.h1``;
 export const BackButton = styled.button`
   background-color: #1f9156;
   color: #ffffff;
-  padding: 10px;
+  padding: 12px;
   border: none;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
+  margin-top: 600px;
+  position: absolute;
+  margin-left: -350px;
 
   &:hover {
     cursor: pointer;
@@ -37,11 +40,14 @@ export const PosterImage = styled.img`
 export const AddToWatchlist = styled.button`
   background-color: #1f9156;
   color: #ffffff;
-  padding: 10px;
+  padding: 12px;
   border: none;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
+  margin-top: 600px;
+  position: absolute;
+  margin-left: -240px;
 
   &:hover {
     cursor: pointer;

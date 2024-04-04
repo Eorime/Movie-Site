@@ -81,13 +81,12 @@ const MovieDetails: React.FC = () => {
         src={movieDetails.big_image}
         alt={`${movieDetails.title} poster`}
       />
-
       <BackButton
         onClick={() => {
           navigate(-1);
         }}
       >
-        Back
+        Go Back
       </BackButton>
       <AddToWatchlist onClick={handleAddToWatchlist}>
         Add to Watchlist

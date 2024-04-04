@@ -87,7 +87,7 @@ const SeriesDetails: React.FC = () => {
           navigate(-1);
         }}
       >
-        Back
+        Go Back
       </BackButton>
       <AddToWatchlist onClick={handleAddToWatchlist}>
         Add to Watchlist

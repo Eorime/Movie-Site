@@ -2,6 +2,12 @@ import styled from "styled-components";
 
 export const SerieContainer = styled.div``;
 
+export const DetailsContainer = styled.div`
+  position: absolute;
+  margin-left: 600px;
+  margin-top: 5px;
+`;
+
 export const Spinner = styled.div``;
 
 export const Title = styled.h1``;

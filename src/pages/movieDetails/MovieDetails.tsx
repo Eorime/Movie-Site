@@ -62,18 +62,13 @@ const MovieDetails: React.FC = () => {
       )}
       <Trailer>
         <iframe
-          width="560"
-          height="315"
+          width="400"
+          height="200"
           src={movieDetails.trailer_embed_link}
           title="Trailer"
           allowFullScreen
         ></iframe>
       </Trailer>
-      <PosterImage
-        src={movieDetails.big_image}
-        alt={`${movieDetails.title} poster`}
-      />
-
       <DetailsContaier>
         <Title>{movieDetails.title}</Title>
         <Paragraph>{movieDetails.description}</Paragraph>
@@ -82,6 +77,11 @@ const MovieDetails: React.FC = () => {
         <Paragraph>{`Genre: ${movieDetails.genre}`}</Paragraph>
         <StyledLink to={movieDetails.trailer} target="_blank"></StyledLink>
       </DetailsContaier>
+      <PosterImage
+        src={movieDetails.big_image}
+        alt={`${movieDetails.title} poster`}
+      />
+
       <BackButton
         onClick={() => {
           navigate(-1);

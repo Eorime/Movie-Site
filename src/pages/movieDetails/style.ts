@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 export const MovieContainer = styled.div``;
 
-export const DetailsContaier = styled.div``;
+export const DetailsContaier = styled.div`
+  position: absolute;
+  margin-left: 600px;
+  margin-top: 5px;
+`;
 
 export const Title = styled.h1``;
 
@@ -50,5 +54,5 @@ export const Paragraph = styled.p``;
 export const Trailer = styled.div`
   position: absolute;
   margin-left: 600px;
-  margin-top: 400px;
+  margin-top: 285px;
 `;

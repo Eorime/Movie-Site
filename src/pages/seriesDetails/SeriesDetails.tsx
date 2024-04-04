@@ -8,6 +8,7 @@ import {
   Spinner,
   Title,
   Trailer,
+  DetailsContainer,
 } from "./style";
 import { BarLoader } from "react-spinners";
 import { fetchDataDetails } from "../../api";
@@ -68,16 +69,19 @@ const SeriesDetails: React.FC = () => {
           allowFullScreen
         ></iframe>
       </Trailer>
+      <DetailsContainer>
+        <Title>{serieDetails.title}</Title>
+        <Paragraph>{serieDetails.description}</Paragraph>
+        <Paragraph>{`Year: ${serieDetails.year}`}</Paragraph>
+        {/* <Paragraph>{`Director: ${serieDetails.director}`}</Paragraph> */}
+        <Paragraph>{`Genre: ${serieDetails.genre}`}</Paragraph>
+        <StyledLink to={serieDetails.trailer} target="_blank"></StyledLink>
+      </DetailsContainer>
       <PosterImage
         src={serieDetails.big_image}
         alt={`${serieDetails.title} poster`}
       />
-      <Title>{serieDetails.title}</Title>
-      <Paragraph>{serieDetails.description}</Paragraph>
-      <Paragraph>{`Year: ${serieDetails.year}`}</Paragraph>
-      <Paragraph>{`Director: ${serieDetails.director}`}</Paragraph>
-      <Paragraph>{`Genre: ${serieDetails.genre}`}</Paragraph>
-      <StyledLink to={serieDetails.trailer} target="_blank"></StyledLink>
+
       <BackButton
         onClick={() => {
           navigate(-1);

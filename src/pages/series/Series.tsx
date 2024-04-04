@@ -9,6 +9,7 @@ import {
   DetailsButton,
   Error,
   FinalError,
+  PageContainer,
   Paragraph,
   SerieContainer,
   SeriesContainer,
@@ -58,36 +59,38 @@ const Series: React.FC = () => {
   const currentSeries = seriesData.slice(firstSeriesIndex, lastSeriesIndex);
 
   return (
-    <SeriesContainer>
+    <PageContainer>
       <Navbar />
-      {isLoading ? (
-        <Spinner>
-          <BarLoader />
-        </Spinner>
-      ) : error ? (
-        <Error>Error: {error}</Error>
-      ) : Array.isArray(currentSeries) && currentSeries.length > 0 ? (
-        currentSeries.map((series: Serie, index: number) => (
-          <SerieContainer key={index}>
-            <Title>{series.title}</Title>
-            <Thumbnail src={series.big_image} alt={series.title} />
-            <Paragraph>Rank: {series.rank}</Paragraph>
-            <Paragraph>Rating: {series.rating}</Paragraph>
-            <DetailsButton onClick={() => navigate(`top${series.rank}`)}>
-              More
-            </DetailsButton>
-          </SerieContainer>
-        ))
-      ) : (
-        <FinalError>No movies found.</FinalError>
-      )}
+      <SeriesContainer>
+        {isLoading ? (
+          <Spinner>
+            <BarLoader />
+          </Spinner>
+        ) : error ? (
+          <Error>Error: {error}</Error>
+        ) : Array.isArray(currentSeries) && currentSeries.length > 0 ? (
+          currentSeries.map((series: Serie, index: number) => (
+            <SerieContainer key={index}>
+              <Thumbnail src={series.big_image} alt={series.title} />
+              <Title>{series.title}</Title>
+              <Paragraph>Rank: {series.rank}</Paragraph>
+              <Paragraph>Rating: {series.rating}</Paragraph>
+              <DetailsButton onClick={() => navigate(`top${series.rank}`)}>
+                See More
+              </DetailsButton>
+            </SerieContainer>
+          ))
+        ) : (
+          <FinalError>No movies found.</FinalError>
+        )}
+      </SeriesContainer>
       <Pagination
         allMovies={seriesData.length}
         moviesPerPage={seriesPerPage}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />{" "}
-    </SeriesContainer>
+    </PageContainer>
   );
 };
 export default Series;

@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 export const PaginationContainer = styled.div`
   text-align: center;
+  margin-top: 40px;
+  font-size: 20px;
 `;
 
 export const PaginationList = styled.ul`
@@ -16,6 +18,6 @@ export const PaginationListElements = styled.li`
 
 export const StyledLink = styled(Link)<{ isActive: boolean }>`
   text-decoration: none;
-  color: ${(props) => (props.isActive ? "black" : "gray")};
+  color: ${(props) => (props.isActive ? "gray" : "#f5f5f5")};
   font-weight: ${(props) => (props.isActive ? "bold" : "normal")};
 `;

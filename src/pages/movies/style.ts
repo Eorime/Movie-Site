@@ -1,8 +1,17 @@
 import styled from "styled-components";
 
-export const MoviesContainer = styled.div``;
+export const PageContainer = styled.div``;
 
-export const MovieContainer = styled.div``;
+export const MoviesContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-left: 180px;
+`;
+
+export const MovieContainer = styled.div`
+  margin: 20px;
+`;
 
 export const Spinner = styled.div``;
 
@@ -15,7 +24,10 @@ export const Paragraph = styled.p``;
 export const Title = styled.h2``;
 
 export const Thumbnail = styled.img`
-  width: 200px;
+  width: 270px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
 `;
 
 export const DetailsButton = styled.button`
@@ -24,6 +36,8 @@ export const DetailsButton = styled.button`
   padding: 10px;
   border: none;
   border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
 
   &:hover {
     cursor: pointer;

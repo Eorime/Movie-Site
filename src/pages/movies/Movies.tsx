@@ -5,6 +5,7 @@ import {
   FinalError,
   MovieContainer,
   MoviesContainer,
+  PageContainer,
   Paragraph,
   Spinner,
   Thumbnail,
@@ -58,36 +59,38 @@ const Movies: React.FC = () => {
   const currentMovies = movieData.slice(firstMovieIndex, lastMovieIndex);
 
   return (
-    <MoviesContainer>
+    <PageContainer>
       <Navbar />
-      {isLoading ? (
-        <Spinner>
-          <BarLoader />
-        </Spinner>
-      ) : error ? (
-        <Error>Error: {error}</Error>
-      ) : Array.isArray(currentMovies) && currentMovies.length > 0 ? (
-        currentMovies.map((movie: Movie, index: number) => (
-          <MovieContainer key={index}>
-            <Title>{movie.title}</Title>
-            <Thumbnail src={movie.big_image} alt={movie.title} />
-            <Paragraph>Rank: {movie.rank}</Paragraph>
-            <Paragraph>Rating: {movie.rating}</Paragraph>
-            <DetailsButton onClick={() => navigate(`top${movie.rank}`)}>
-              More
-            </DetailsButton>
-          </MovieContainer>
-        ))
-      ) : (
-        <FinalError>No movies found.</FinalError>
-      )}
+      <MoviesContainer>
+        {isLoading ? (
+          <Spinner>
+            <BarLoader />
+          </Spinner>
+        ) : error ? (
+          <Error>Error: {error}</Error>
+        ) : Array.isArray(currentMovies) && currentMovies.length > 0 ? (
+          currentMovies.map((movie: Movie, index: number) => (
+            <MovieContainer key={index}>
+              <Thumbnail src={movie.big_image} alt={movie.title} />
+              <Title>{movie.title}</Title>
+              <Paragraph>Rank: {movie.rank}</Paragraph>
+              <Paragraph>Rating: {movie.rating}</Paragraph>
+              <DetailsButton onClick={() => navigate(`top${movie.rank}`)}>
+                See More
+              </DetailsButton>
+            </MovieContainer>
+          ))
+        ) : (
+          <FinalError>No movies found.</FinalError>
+        )}
+      </MoviesContainer>
       <Pagination
         allMovies={movieData.length}
         moviesPerPage={moviesPerPage}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />{" "}
-    </MoviesContainer>
+    </PageContainer>
   );
 };
 

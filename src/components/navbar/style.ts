@@ -13,5 +13,6 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   color: inherit;
   font-size: 20px;
+  font-weight: bold;
   padding: 20px;
 `;

@@ -6,8 +6,8 @@ import {
   Paragraph,
   PosterImage,
   Spinner,
-  TrailerThumbnail,
   Title,
+  Trailer,
 } from "./style";
 import { BarLoader } from "react-spinners";
 import { fetchDataDetails } from "../../api";
@@ -59,12 +59,22 @@ const SeriesDetails: React.FC = () => {
           <BarLoader />
         </Spinner>
       )}
+      <Trailer>
+        <iframe
+          width="560"
+          height="315"
+          src={serieDetails.trailer_embed_link}
+          title="Trailer"
+          allowFullScreen
+        ></iframe>
+      </Trailer>
       <PosterImage
         src={serieDetails.big_image}
         alt={`${serieDetails.title} poster`}
       />
       <Title>{serieDetails.title}</Title>
       <Paragraph>{serieDetails.description}</Paragraph>
+      <Paragraph>{`Year: ${serieDetails.year}`}</Paragraph>
       <Paragraph>{`Director: ${serieDetails.director}`}</Paragraph>
       <Paragraph>{`Genre: ${serieDetails.genre}`}</Paragraph>
       <StyledLink to={serieDetails.trailer} target="_blank"></StyledLink>
@@ -78,15 +88,6 @@ const SeriesDetails: React.FC = () => {
       <AddToWatchlist onClick={handleAddToWatchlist}>
         Add to Watchlist
       </AddToWatchlist>
-      <TrailerThumbnail>
-        <iframe
-          width="560"
-          height="315"
-          src={serieDetails.trailer_embed_link}
-          title="Trailer"
-          allowFullScreen
-        ></iframe>
-      </TrailerThumbnail>
     </SerieContainer>
   );
 };

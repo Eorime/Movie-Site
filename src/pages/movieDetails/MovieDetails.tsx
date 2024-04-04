@@ -8,7 +8,7 @@ import {
   PosterImage,
   Spinner,
   Title,
-  TrailerThumbnail,
+  Trailer,
 } from "./style";
 import { BarLoader } from "react-spinners";
 import { fetchDataDetails } from "../../api";
@@ -60,13 +60,24 @@ const MovieDetails: React.FC = () => {
           <BarLoader />
         </Spinner>
       )}
+      <Trailer>
+        <iframe
+          width="560"
+          height="315"
+          src={movieDetails.trailer_embed_link}
+          title="Trailer"
+          allowFullScreen
+        ></iframe>
+      </Trailer>
       <PosterImage
         src={movieDetails.big_image}
         alt={`${movieDetails.title} poster`}
       />
+
       <DetailsContaier>
         <Title>{movieDetails.title}</Title>
         <Paragraph>{movieDetails.description}</Paragraph>
+        <Paragraph>{`Year: ${movieDetails.year}`}</Paragraph>
         <Paragraph>{`Director: ${movieDetails.director}`}</Paragraph>
         <Paragraph>{`Genre: ${movieDetails.genre}`}</Paragraph>
         <StyledLink to={movieDetails.trailer} target="_blank"></StyledLink>
@@ -81,15 +92,6 @@ const MovieDetails: React.FC = () => {
       <AddToWatchlist onClick={handleAddToWatchlist}>
         Add to Watchlist
       </AddToWatchlist>
-      <TrailerThumbnail>
-        <iframe
-          width="560"
-          height="315"
-          src={movieDetails.trailer_embed_link}
-          title="Trailer"
-          allowFullScreen
-        ></iframe>
-      </TrailerThumbnail>
     </MovieContainer>
   );
 };

@@ -62,8 +62,8 @@ const MovieDetails: React.FC = () => {
       )}
       <Trailer>
         <iframe
-          width="400"
-          height="200"
+          width="500"
+          height="260"
           src={movieDetails.trailer_embed_link}
           title="Trailer"
           allowFullScreen

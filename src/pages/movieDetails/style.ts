@@ -10,7 +10,13 @@ export const DetailsContaier = styled.div`
 
 export const Title = styled.h1``;
 
-export const Spinner = styled.div``;
+export const Spinner = styled.div`
+  background-color: #1f9156;
+  width: 200px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+`;
 
 export const BackButton = styled.button`
   background-color: #1f9156;

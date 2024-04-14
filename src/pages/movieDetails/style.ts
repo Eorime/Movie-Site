@@ -68,3 +68,13 @@ export const Trailer = styled.div`
   margin-left: 600px;
   margin-top: 285px;
 `;
+
+export const Frame = styled.iframe`
+  width: 560px;
+  height: 315px;
+
+  @media screen and (max-width: 1500px) {
+    width: 400px;
+    height: 250px;
+  }
+`;

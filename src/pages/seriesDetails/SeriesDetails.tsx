@@ -9,6 +9,7 @@ import {
   Title,
   Trailer,
   DetailsContainer,
+  Frame,
 } from "./style";
 import { BarLoader } from "react-spinners";
 import { fetchDataDetails } from "../../api";
@@ -61,13 +62,11 @@ const SeriesDetails: React.FC = () => {
         </Spinner>
       )}
       <Trailer>
-        <iframe
-          width="560"
-          height="315"
+        <Frame
           src={serieDetails.trailer_embed_link}
           title="Trailer"
           allowFullScreen
-        ></iframe>
+        ></Frame>
       </Trailer>
       <DetailsContainer>
         <Title>{serieDetails.title}</Title>

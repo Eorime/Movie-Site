@@ -3,6 +3,7 @@ import {
   AddToWatchlist,
   BackButton,
   DetailsContaier,
+  Frame,
   MovieContainer,
   Paragraph,
   PosterImage,
@@ -61,13 +62,13 @@ const MovieDetails: React.FC = () => {
         </Spinner>
       )}
       <Trailer>
-        <iframe
+        <Frame
           width="500"
           height="260"
           src={movieDetails.trailer_embed_link}
           title="Trailer"
           allowFullScreen
-        ></iframe>
+        ></Frame>
       </Trailer>
       <DetailsContaier>
         <Title>{movieDetails.title}</Title>

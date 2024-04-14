@@ -15,7 +15,6 @@ export const MovieContainer = styled.div`
 
 export const Spinner = styled.div`
   background-color: #1f9156;
-  width: 200px;
   position: fixed;
   left: 50%;
   top: 50%;

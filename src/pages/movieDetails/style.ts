@@ -113,6 +113,7 @@ export const Frame = styled.iframe`
   width: 760px;
   height: 415px;
   margin-left: 100px;
+  margin-top: 60px;
 
   @media screen and (max-width: 1500px) {
     width: 400px;

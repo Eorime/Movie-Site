@@ -51,8 +51,6 @@ const MovieDetails: React.FC = () => {
     addToWatchlist(movieDetails);
   };
 
-  console.log(movieDetails);
-
   return (
     <MovieContainer>
       <Navbar />

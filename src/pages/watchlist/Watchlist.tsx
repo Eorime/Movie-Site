@@ -15,7 +15,6 @@ const Watchlist: React.FC = () => {
   const handleRemoveFromWatchlist = (rank: number) => {
     removeFromWatchlist(rank);
   };
-  console.log(watchlist);
   return (
     <WatchlistContainer>
       <Navbar />

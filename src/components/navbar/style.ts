@@ -5,7 +5,7 @@ export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin-top: 15px;
+  margin-top: 100px;
   position: absolute;
 `;
 

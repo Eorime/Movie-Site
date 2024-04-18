@@ -4,6 +4,7 @@ export const Container = styled.div`
   top: 20px;
   position: absolute;
   left: 20px;
+
   @media screen and (max-width: 1500px) {
     left: 20px;
     top: 10px;
@@ -24,7 +25,7 @@ export const SliderContainer = styled.div`
   max-width: 80vw;
   height: 50vw;
   position: absolute;
-  margin-left: 50%;
+  margin-left: 40%;
 
   &::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
@@ -33,30 +34,30 @@ export const SliderContainer = styled.div`
   }
 
   &::-webkit-scrollbar {
-    height: 10px;
+    display: none;
   }
 `;
 
 export const SliderContent = styled.div`
-  margin-right: 200px;
+  margin-right: 100px;
 `;
 
 export const SliderImage = styled.img`
   border-radius: 20px;
-  height: 800px;
+  height: 400px;
   width: auto;
   transition: height 0.3s ease;
 
   &: hover {
     cursor: pointer;
-    height: 1000px;
+    height: 500px;
   }
 `;
 
 export const SliderTitle = styled.h2`
   position: absolute;
   margin-top: 80px;
-  margin-left: 360px;
+  margin-left: 260px;
 `;
 
 export const SliderInfo = styled.p``;
@@ -76,9 +77,11 @@ export const SeriesSliderContainer = styled.div`
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   max-width: 80vw;
-  height: 50vw;
+  height: calc(50vw-20px);
   position: absolute;
-  margin-left: 50%;
+  margin-left: 40%;
+  margin-bottom: -1440px;
+  bottom: 20%;
 
   &::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
@@ -87,14 +90,14 @@ export const SeriesSliderContainer = styled.div`
   }
 
   &::-webkit-scrollbar {
-    height: 10px;
+    display: none;
   }
 `;
 
 export const SeriesSliderTitle = styled.h2`
   position: absolute;
-  margin-top: 1230px;
-  margin-left: 360px;
+  margin-top: 790px;
+  margin-left: 260px;
 `;
 
 export const Error = styled.div``;

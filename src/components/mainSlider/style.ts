@@ -6,13 +6,18 @@ export const Container = styled.div`
   left: 20px;
 
   @media screen and (max-width: 1500px) {
-    left: 20px;
+    left: 50px;
     top: 10px;
   }
 `;
 
 export const SliderHeader = styled.h1`
   font-size: 32px;
+
+  @media screen and (max-width: 1500px) {
+    font-size: 18px;
+    margin-left: -32px;
+  }
 `;
 
 export const SliderContainer = styled.div`
@@ -27,19 +32,21 @@ export const SliderContainer = styled.div`
   position: absolute;
   margin-left: 40%;
 
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    width: 5px;
-  }
-
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  @media screen and (max-width: 1500px) {
+    margin-left: 55%;
+    margin-top: 120px;
   }
 `;
 
 export const SliderContent = styled.div`
   margin-right: 100px;
+  @media screen and (max-width: 1500px) {
+    margin-right: 50px;
+  }
 `;
 
 export const SliderImage = styled.img`
@@ -52,15 +59,34 @@ export const SliderImage = styled.img`
     cursor: pointer;
     height: 500px;
   }
+
+  @media screen and (max-width: 1500px) {
+    height: 250px;
+    border-radius: 5px;
+
+    &: hover {
+      cursor: pointer;
+      height: 300px;
+    }
+  }
 `;
 
 export const SliderTitle = styled.h2`
   position: absolute;
   margin-top: 80px;
   margin-left: 260px;
+
+  @media screen and (max-width: 1500px) {
+    margin-left: 200px;
+    font-size: 18px;
+  }
 `;
 
-export const SliderInfo = styled.p``;
+export const SliderInfo = styled.p`
+  @media screen and (max-width: 1500px) {
+    font-size: 10px;
+  }
+`;
 
 export const Spinner = styled.div`
   background-color: #1f9156;
@@ -83,14 +109,13 @@ export const SeriesSliderContainer = styled.div`
   margin-bottom: -1440px;
   bottom: 20%;
 
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    width: 5px;
-  }
-
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  @media screen and (max-width: 1500px) {
+    margin-left: 55%;
+    margin-bottom: -900px;
   }
 `;
 
@@ -98,6 +123,12 @@ export const SeriesSliderTitle = styled.h2`
   position: absolute;
   margin-top: 790px;
   margin-left: 260px;
+
+  @media screen and (max-width: 1500px) {
+    margin-top: 500px;
+    margin-left: 200px;
+    font-size: 18px;
+  }
 `;
 
 export const Error = styled.div``;

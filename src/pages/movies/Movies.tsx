@@ -13,7 +13,7 @@ import {
 } from "./style";
 import { fetchData } from "../../api";
 import { BarLoader } from "react-spinners";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
 import Pagination from "../../components/pagination/Pagination";
 
@@ -43,7 +43,6 @@ const Movies: React.FC = () => {
           apiHost
         );
         setMovieData(response);
-        console.log(response);
       } catch (error) {
         setError((error as Error).message);
       } finally {

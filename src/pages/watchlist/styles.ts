@@ -2,6 +2,16 @@ import styled from "styled-components";
 
 export const WatchlistContainer = styled.div``;
 
+export const WatchlistHeader = styled.h1`
+  top: 20px;
+  position: absolute;
+  left: 20px;
+  @media screen and (max-width: 1500px) {
+    left: 20px;
+    top: 10px;
+  }
+`;
+
 export const WatchlistMoviesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);

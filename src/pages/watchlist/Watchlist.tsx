@@ -4,6 +4,7 @@ import {
   Paragraph,
   RemoveButton,
   WatchlistContainer,
+  WatchlistHeader,
   WatchlistMovie,
   WatchlistMovieImage,
   WatchlistMoviesContainer,
@@ -17,6 +18,7 @@ const Watchlist: React.FC = () => {
   };
   return (
     <WatchlistContainer>
+      <WatchlistHeader>Watchlist</WatchlistHeader>
       <Navbar />
       <WatchlistMoviesContainer>
         {watchlist.map((movie) => (

@@ -9,6 +9,7 @@ export const WatchlistHeader = styled.h1`
   @media screen and (max-width: 1500px) {
     left: 20px;
     top: 10px;
+    font-size: 18px;
   }
 `;
 

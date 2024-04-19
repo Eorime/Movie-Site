@@ -1,7 +1,7 @@
 import React from "react";
 import { NavbarContainer, StyledLink } from "./style";
 import { routes } from "../../constants/routes";
-import SignInNav from "../signInNav/SignInNav";
+import SignIn from "../signIn/SignIn";
 
 const Navbar = () => {
   return (
@@ -11,8 +11,7 @@ const Navbar = () => {
       <StyledLink to={routes.series}>Series</StyledLink>
       <StyledLink to={routes.watchlist}>Watchlist</StyledLink>
       <StyledLink>
-        {" "}
-        <SignInNav />
+        <SignIn />
       </StyledLink>
     </NavbarContainer>
   );

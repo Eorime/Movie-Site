@@ -31,9 +31,9 @@ export const BackButton = styled.button`
   padding: 24px;
   border: none;
   border-radius: 16px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  margin-top: 850px;
+  margin-top: 800px;
   position: absolute;
   margin-left: -500px;
 
@@ -76,9 +76,9 @@ export const AddToWatchlist = styled.button`
   padding: 24px;
   border: none;
   border-radius: 16px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  margin-top: 850px;
+  margin-top: 800px;
   position: absolute;
   margin-left: -300px;
 

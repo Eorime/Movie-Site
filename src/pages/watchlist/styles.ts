@@ -17,7 +17,7 @@ export const WatchlistMoviesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
-  margin-left: 180px;
+  margin-left: 280px;
 `;
 
 export const RemoveButton = styled.button`
@@ -38,12 +38,12 @@ export const RemoveButton = styled.button`
   @media screen and (max-width: 1500px) {
     background-color: #1f9156;
     color: #ffffff;
-    padding: 12px;
+    padding: 8px;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 6px;
+    font-size: 12px;
     font-weight: bold;
-    margin-top: 600px;
+    margin-top: 10px;
     position: absolute;
   }
 `;
@@ -57,9 +57,18 @@ export const WatchlistMovieImage = styled.img`
   height: 400px;
   object-fit: cover;
   border-radius: 8px;
-  margin-top: 20px;
+  margin-top: 50px;
+
+  @media screen and (max-width: 1500px) {
+    width: auto;
+    height: 250px;
+  }
 `;
 
 export const Paragraph = styled.p`
   font-size: 20px;
+
+  @media screen and (max-width: 1500px) {
+    font-size: 16px;
+  }
 `;

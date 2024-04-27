@@ -9,6 +9,11 @@ export const Container = styled.div`
     left: 50px;
     top: 10px;
   }
+
+  @media screen and (max-width: 500px) {
+    left: 20px;
+    top: 10px;
+  }
 `;
 
 export const SliderHeader = styled.h1`
